@@ -1,0 +1,148 @@
+<!DOCTYPE html><html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DomainPs - GTPS</title>
+  <style>
+    :root {
+      --bg-color: #0e0e0e;
+      --text-color: #f0f0f0;
+      --link-color: #00ffff;
+      --status-color: #00ff00;
+    }
+    body.light {
+      --bg-color: #ffffff;
+      --text-color: #000000;
+      --link-color: #0077cc;
+      --status-color: #008000;
+    }
+    body {
+      background: var(--bg-color);
+      color: var(--text-color);
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      transition: background 0.3s, color 0.3s;
+    }
+    header {
+      padding: 2rem 1rem;
+    }
+    h1 {
+      font-size: 3rem;
+      color: var(--link-color);
+    }
+    p.tagline {
+      font-size: 1.2rem;
+      color: #ccc;
+      margin-bottom: 1rem;
+    }
+    .status {
+      margin: 1rem;
+      font-size: 1.1rem;
+      color: var(--status-color);
+    }
+    .downloads a {
+      display: block;
+      margin: 0.5rem 0;
+      color: var(--link-color);
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .downloads a:hover {
+      text-decoration: underline;
+    }
+    .disclaimer {
+      max-width: 600px;
+      padding: 2rem;
+      font-size: 0.9rem;
+      color: #999;
+    }
+    .discord-form {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 1rem;
+      margin: 1rem;
+      border-radius: 10px;
+      max-width: 400px;
+    }
+    .discord-form input {
+      width: 80%;
+      padding: 0.5rem;
+      margin: 0.5rem 0;
+    }
+    .discord-form button {
+      padding: 0.5rem 1rem;
+      background-color: var(--link-color);
+      border: none;
+      color: #000;
+      cursor: pointer;
+      font-weight: bold;
+      border-radius: 5px;
+    }
+    #toggleTheme {
+      margin-top: 1rem;
+      padding: 0.5rem 1rem;
+      background-color: var(--link-color);
+      border: none;
+      color: #000;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    footer {
+      margin-top: auto;
+      padding: 1rem;
+      color: #444;
+      font-size: 0.8rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>DomainPs</h1>
+    <p class="tagline">GTPS ringan, cepat, dan seru! Buat duniamu sendiri, bebas dan tanpa batas.</p>
+    <p class="status" id="serverStatus">Status Server: 🔄 Memeriksa...</p>
+    <button id="toggleTheme">Toggle Dark/Light Mode</button>
+  </header>  <section class="downloads">
+    <a href="https://www.mediafire.com/file/hdvws0i9hbyox9i/Virtual_HOSTS.apk/file" target="_blank">Download VHost (Virtual_HOSTS.apk)</a>
+    <a href="https://www.mediafire.com/FILE/PTUNNEL.apk" target="_blank">Download PTUNNEL</a>
+    <a href="https://www.mediafire.com/FILE/WINDOWS_CLIENT.zip" target="_blank">Download WINDOWS CLIENT</a>
+  </section>  <section class="discord-form">
+    <h3>Join Discord Kami</h3>
+    <p>Masukkan nama pengguna Discord kamu:</p>
+    <input type="text" id="discordName" placeholder="Contoh: User#1234" />
+    <button onclick="joinDiscord()">Gabung</button>
+    <p id="discordMessage"></p>
+  </section>  <section class="disclaimer">
+    <p><strong>Disclaimer:</strong> DomainPs adalah server pribadi berbasis komunitas. Kami tidak berafiliasi dengan Growtopia, Ubisoft, atau perusahaan lainnya. Seluruh hak cipta tetap milik pemilik aslinya. Game ini hanya untuk hiburan dan edukasi.</p>
+  </section>  <footer>
+    &copy; 2025 DomainPs Community. All Rights Reserved.
+  </footer>  <script>
+    // Toggle dark/light mode
+    document.getElementById("toggleTheme").onclick = () => {
+      document.body.classList.toggle("light");
+    };
+
+    // Simulasi Status Server (ubah sesuai API nyata kalau ada)
+    const serverStatusEl = document.getElementById("serverStatus");
+    setTimeout(() => {
+      serverStatusEl.textContent = "Status Server: 🟢 Online";
+    }, 1000);
+
+    // Simulasi Discord form
+    function joinDiscord() {
+      const name = document.getElementById("discordName").value;
+      const msg = document.getElementById("discordMessage");
+      if (name.trim() === "") {
+        msg.textContent = "Masukkan nama Discord dengan benar.";
+        msg.style.color = "red";
+      } else {
+        msg.textContent = `Terima kasih, ${name}! Link undangan akan dikirim.`;
+        msg.style.color = "green";
+      }
+    }
+  </script></body>
+</html>
